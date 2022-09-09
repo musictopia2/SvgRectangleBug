@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="BasicBlazorLibrary" Version="4.0.3" />
+		
+		<PackageReference Include="SvgHelper.Blazor" Version="4.0.4" />
+	</ItemGroup>
+
+</Project>

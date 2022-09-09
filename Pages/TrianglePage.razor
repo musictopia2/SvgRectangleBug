@@ -1,0 +1,10 @@
+﻿@page "/Triangle"
+<SampleGraphics Shape="shape" Click="Click" IsSelected="isSelected" />
+@code {
+    EnumShape shape = EnumShape.Triangle;
+    bool isSelected = false;
+    void Click()
+    {
+        isSelected = !isSelected;
+    }
+}

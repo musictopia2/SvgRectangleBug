@@ -1,0 +1,11 @@
+﻿@page "/SquareSelected"
+<SampleGraphics Shape="shape" Click="Click" IsSelected="isSelected" />
+
+@code {
+    EnumShape shape = EnumShape.Square;
+    bool isSelected = true;
+    void Click()
+    {
+        isSelected = !isSelected;
+    }
+}
