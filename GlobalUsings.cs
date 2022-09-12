@@ -1,10 +1,8 @@
-﻿global using BasicBlazorLibrary.Components.BaseClasses;
-global using Microsoft.AspNetCore.Components;
-global using SvgHelper.Blazor.Logic.Classes.Interfaces;
+﻿global using Microsoft.AspNetCore.Components;
 global using System.Drawing;
-global using CommonBasicLibraries.AdvancedGeneralFunctionsAndProcesses.BasicExtensions;
 global using Microsoft.AspNetCore.Components.Rendering;
-global using SvgHelper.Blazor.Logic.Classes.SubClasses;
-global using SvgHelper.Blazor.Logic;
-global using cs = CommonBasicLibraries.BasicDataSettingsAndProcesses.SColorString;
 global using SvgRectangleBug.Components;
+global using SvgRectangleBug.SvgHelpers.Classes.Interfaces;
+global using SvgRectangleBug.SvgHelpers.Classes;
+global using SvgRectangleBug.SvgHelpers.Classes.SubClasses;
+global using SvgRectangleBug.SvgHelpers;

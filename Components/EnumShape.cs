@@ -2,6 +2,5 @@
 public enum EnumShape
 {
     Circle = 1,
-    Triangle = 2,
-    Square = 3
+    Square = 2
 }

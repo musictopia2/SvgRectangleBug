@@ -35,7 +35,7 @@ public abstract class BaseDeckGraphics : GraphicsCommand
     }
     protected double GetDarkHighlighter() => .25;
     protected double GetLightHighlighter() => .1;
-    protected string FillColor { set; get; } = cs.White;
+    protected string FillColor { set; get; } = "white";
     protected float RoundedRadius = 6;
     protected virtual bool ShowDisabledColors { get; } = false;
     protected virtual void DrawHighlighters()
@@ -50,7 +50,7 @@ public abstract class BaseDeckGraphics : GraphicsCommand
         MainGroup!.Children.Add(rect);
     }
     protected virtual string GetOpacity => GetLightHighlighter().ToString();
-    protected virtual string SelectFillColor => cs.Red.ToWebColor();
+    protected virtual string SelectFillColor => "red";
     protected Rect StartRectangle()
     {
         Rect output = new();
@@ -60,19 +60,11 @@ public abstract class BaseDeckGraphics : GraphicsCommand
         output.RY = RoundedRadius.ToString();
         return output;
     }
-    protected void PopulateImage(Image image)
-    {
-        image.Width = (DefaultSize.Width - BorderWidth).ToString();
-        image.Height = (DefaultSize.Height - BorderWidth).ToString();
-    }
     protected override void BuildRenderTree(RenderTreeBuilder builder)
     {
 
         ISvg svg = new SVG();
-        SvgRenderClass render = new()
-        {
-            Allow0 = true
-        };
+        SvgRenderClass render = new();
         if (TargetSize != "")
         {
             if (DefaultSize.Width >= DefaultSize.Height)
@@ -114,7 +106,7 @@ public abstract class BaseDeckGraphics : GraphicsCommand
         Rect rect = StartRectangle();
         rect.PopulateStrokesToStyles(strokeWidth: (int)BorderWidth);
         BeforeFilling();
-        rect.Fill = FillColor.ToWebColor();
+        rect.Fill = FillColor;
         MainGroup.Children.Add(rect);
         DrawHighlighters();
         DrawImage();

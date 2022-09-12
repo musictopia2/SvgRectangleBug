@@ -9,7 +9,7 @@ public abstract class GraphicsCommand : KeyComponentBase
     {
         svg.EventData.ActionClicked = Clicked;
     }
-    private async Task Clicked(object args1, object args2)
+    private async Task Clicked()
     {
         await Submit();
     }
