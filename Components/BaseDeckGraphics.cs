@@ -55,6 +55,7 @@ public abstract class BaseDeckGraphics : GraphicsCommand
     {
         Rect output = new();
         output.Width = (DefaultSize.Width - BorderWidth).ToString();
+        output.AutoIncrementElement(MainGroup!);
         output.Height = (DefaultSize.Height - BorderWidth).ToString();
         output.RX = RoundedRadius.ToString();
         output.RY = RoundedRadius.ToString();

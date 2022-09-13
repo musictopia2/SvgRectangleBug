@@ -18,6 +18,8 @@ public class Text : BaseElement, IStart
     bool IStart.GetCapturedRef => throw new Exception($"There was no property for GetCapturedRef.  Try running GetSpecificProperty");
     List<IStart> IStart.GetChildren => Children;
     string IStart.TypeUsed => "Text";
+
+
     List<CustomProperty> IStart.Properties()
     {
         List<CustomProperty> output = new();

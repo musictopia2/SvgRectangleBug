@@ -1,6 +1,12 @@
 ﻿namespace SvgRectangleBug.SvgHelpers;
 public static class Extensions
 {
+    //internal static int StartAt { get; set; } = 1000;
+    public static void AutoIncrementElement(this IStart start, IParentGraphic parent)
+    {
+        start.RenderUpTo = parent.ManuelUpTo;
+        parent.ManuelUpTo++;
+    }
     public static void PopulateStrokesToStyles(this BaseElement element, string color = "black", float strokeWidth = 1, string fontFamily = "default", double opacity = 1)
     {
         if (fontFamily == "default")

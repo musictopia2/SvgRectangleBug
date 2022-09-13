@@ -13,6 +13,10 @@ public partial class G : IParentGraphic, IStart
     bool IStart.GetCapturedRef => throw new Exception($"There was no property for GetCapturedRef.  Try running GetSpecificProperty");
     List<IStart> IStart.GetChildren => Children;
     string IStart.TypeUsed => "G";
+
+    public int RenderUpTo { get; set; }
+    int IParentGraphic.ManuelUpTo { get; set; } = 1000;
+
     List<CustomProperty> IStart.Properties()
     {
         List<CustomProperty> output = new();

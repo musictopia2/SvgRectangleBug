@@ -19,6 +19,8 @@ public class Rect : BaseElement, IImageSize, IStart
     bool IStart.GetCapturedRef => CaptureRef;
     List<IStart> IStart.GetChildren => new();
     string IStart.TypeUsed => "Rect";
+
+
     List<CustomProperty> IStart.Properties()
     {
         List<CustomProperty> output = new();

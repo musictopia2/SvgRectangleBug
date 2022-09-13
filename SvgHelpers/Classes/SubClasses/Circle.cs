@@ -16,6 +16,8 @@ public class Circle : BaseElement, IStart
     bool IStart.GetCapturedRef => CaptureRef;
     List<IStart> IStart.GetChildren => new();
     string IStart.TypeUsed => "Circle";
+
+
     List<CustomProperty> IStart.Properties()
     {
         List<CustomProperty> output = new();

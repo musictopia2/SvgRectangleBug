@@ -16,6 +16,9 @@ public partial class SVG : BaseElement, IImageSize, IParentGraphic, ISvg
     bool IStart.GetCapturedRef => CaptureRef;
     List<IStart> IStart.GetChildren => Children;
     string IStart.TypeUsed => "SVG";
+
+    int IParentGraphic.ManuelUpTo { get; set; } = 1000;
+
     List<CustomProperty> IStart.Properties()
     {
         List<CustomProperty> output = new();

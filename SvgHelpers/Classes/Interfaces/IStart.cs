@@ -1,6 +1,7 @@
 ﻿namespace SvgRectangleBug.SvgHelpers.Classes.Interfaces;
 public interface IStart
 {
+    int RenderUpTo { get; set; }
     bool HasSpecificProperty(string name);
     bool GetCapturedRef { get; }
     string GetSpecificProperty(string name);

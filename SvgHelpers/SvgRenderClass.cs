@@ -46,13 +46,20 @@ public class SvgRenderClass
     public void RenderSvgTree<T>(T item, int k, RenderTreeBuilder builder)
         where T : IStart
     {
-        builder.OpenRegion(k++);
+        if (item.RenderUpTo > 0)
+        {
+            builder.OpenRegion(item.RenderUpTo);
+        }
+        else
+        {
+            builder.OpenRegion(k++);
+        }
         (bool captureRef, string value_id, string classID) = CaptureInfo(item);
         object? _value;
         string _attrName = string.Empty;
         bool isAllowed;
         string tempName = FirstAndLastCharacterToLower(item!.GetType().Name);
-        builder.OpenElement(k++, tempName);
+        builder.OpenElement(1, tempName);
         List<CustomProperty> properties = item.Properties();
         foreach (var p in properties)
         {
