@@ -10,12 +10,12 @@ public class SvgRenderClass
     {
         customEvent.ActionClicked!.Invoke();
     }
-    public void RenderSvgTree<T>(List<T> objects, int k, RenderTreeBuilder builder)
+    public void RenderSvgTree<T>(List<T> objects, RenderTreeBuilder builder)
         where T: IStart
     {
         objects.ForEach(obj =>
         {
-            RenderSvgTree(obj, k, builder);
+            RenderSvgTree(obj, builder);
         });
     }
     private static (bool captureRef, string value_id, string classID) CaptureInfo<T>(T item)
@@ -43,7 +43,7 @@ public class SvgRenderClass
         }
         return (capturedRef, value_id, classID);
     }
-    public void RenderSvgTree<T>(T item, int k, RenderTreeBuilder builder)
+    public void RenderSvgTree<T>(T item, RenderTreeBuilder builder)
         where T : IStart
     {
         if (item.RenderUpTo > 0)
@@ -52,7 +52,7 @@ public class SvgRenderClass
         }
         else
         {
-            builder.OpenRegion(k++);
+            builder.OpenRegion(0);
         }
         (bool captureRef, string value_id, string classID) = CaptureInfo(item);
         object? _value;
@@ -115,7 +115,7 @@ public class SvgRenderClass
         List<IStart> children = item.GetChildren;
         foreach (var c in children)
         {
-            RenderSvgTree(c, k++, builder);
+            RenderSvgTree(c, builder);
         }
         if (captureRef)
         {

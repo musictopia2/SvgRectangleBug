@@ -112,7 +112,7 @@ public abstract class BaseDeckGraphics : GraphicsCommand
         DrawHighlighters();
         DrawImage();
         CreateClick(svg);
-        render.RenderSvgTree(svg, 0, builder);
+        render.RenderSvgTree(svg, builder);
         base.BuildRenderTree(builder);
     }
     protected virtual void BeforeFilling() { }
