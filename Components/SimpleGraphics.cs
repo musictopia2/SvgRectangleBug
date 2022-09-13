@@ -49,7 +49,7 @@ public class SimpleGraphics : ComponentBase
         }
         if (Shape == EnumShape.Square)
         {
-            builder.OpenRegion(0); //opening second rectangle
+            builder.OpenRegion(1000); //opening second rectangle
             builder.OpenElement(1, "rect");
             builder.AddAttribute(2, "x", "13");
             builder.AddAttribute(3, "y", "5");

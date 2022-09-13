@@ -1,0 +1,7 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 100 100" width="100" height="100" @onclick="@(() => styleValue = null)">
+    <rect x="0" y="0" width="100" height="100" style="@styleValue"></rect>
+</svg>
+
+@code {
+    string? styleValue = "stroke: red";
+}
